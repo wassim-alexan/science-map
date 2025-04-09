@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Science Centers Map</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet/dist/leaflet.css"
+    />
+    <style>
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        const map = L.map('map').setView([20, 0], 2);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        const centers = [
+            // Europe
+            { name: "Copernicus Science Centre", city: "Warsaw, Poland", lat: 52.2395, lon: 21.0309, url: "https://www.kopernik.org.pl/en" },
+            { name: "Experiminta", city: "Frankfurt, Germany", lat: 50.1136, lon: 8.6474, url: "https://www.experiminta.de/" },
+            { name: "Experimenta Heilbronn", city: "Heilbronn, Germany", lat: 49.1416, lon: 9.2195, url: "https://www.experimenta.science/" },
+            { name: "Science Museum", city: "London, UK", lat: 51.4978, lon: -0.1745, url: "https://www.sciencemuseum.org.uk/" },
+            { name: "Cité des Sciences et de l'Industrie", city: "Paris, France", lat: 48.8966, lon: 2.3876, url: "https://www.cite-sciences.fr/en/home/" },
+            { name: "Tom Tits Experiment", city: "Stockholm, Sweden", lat: 59.1999, lon: 17.6274, url: "https://www.tomtit.se/english/" },
+            { name: "NEMO Science Museum", city: "Amsterdam, Netherlands", lat: 52.3741, lon: 4.9120, url: "https://www.nemosciencemuseum.nl/en/" },
+            { name: "Museo Nazionale Scienza e Tecnologia", city: "Milan, Italy", lat: 45.4613, lon: 9.1706, url: "https://www.museoscienza.org/en" },
+            { name: "Leonardo da Vinci Exhibition", city: "Rome, Italy", lat: 41.9009, lon: 12.4818, url: "https://www.mostradileonardo.com/" },
+            { name: "CosmoCaixa", city: "Barcelona, Spain", lat: 41.4095, lon: 2.1342, url: "https://cosmocaixa.org/en/" },
+
+            // North America
+            { name: "Exploratorium", city: "San Francisco, USA", lat: 37.8014, lon: -122.3984, url: "https://www.exploratorium.edu/" },
+            { name: "Museum of Science", city: "Boston, USA", lat: 42.3677, lon: -71.0708, url: "https://www.mos.org/" },
+            { name: "Museum of Science and Industry", city: "Chicago, USA", lat: 41.7906, lon: -87.5831, url: "https://www.msichicago.org/" },
+            { name: "Ontario Science Centre", city: "Toronto, Canada", lat: 43.7160, lon: -79.3407, url: "https://www.ontariosciencecentre.ca/" },
+            { name: "Science World", city: "Vancouver, Canada", lat: 49.2734, lon: -123.1035, url: "https://www.scienceworld.ca/" },
+
+            // Asia
+            { name: "Miraikan", city: "Tokyo, Japan", lat: 35.6199, lon: 139.7753, url: "https://www.miraikan.jst.go.jp/en/" },
+            { name: "Shanghai Science and Technology Museum", city: "Shanghai, China", lat: 31.2213, lon: 121.5440, url: "http://en.sstm.org.cn/" },
+            { name: "Science Centre Singapore", city: "Singapore", lat: 1.3321, lon: 103.7352, url: "https://www.science.edu.sg/" },
+            { name: "Gwacheon National Science Museum", city: "Seoul, South Korea", lat: 37.4332, lon: 126.9971, url: "https://www.sciencecenter.go.kr/" },
+
+            // Oceania
+            { name: "Powerhouse Museum", city: "Sydney, Australia", lat: -33.8785, lon: 151.2021, url: "https://www.maas.museum/powerhouse-museum/" },
+            { name: "Scienceworks", city: "Melbourne, Australia", lat: -37.8290, lon: 144.8945, url: "https://museumsvictoria.com.au/scienceworks/" },
+
+            // South America
+            { name: "Catavento Cultural", city: "São Paulo, Brazil", lat: -23.5452, lon: -46.6285, url: "https://cataventocultural.org.br/" },
+            { name: "Museo Participativo de Ciencias", city: "Buenos Aires, Argentina", lat: -34.5831, lon: -58.4269, url: "https://www.mpc.org.ar/" },
+
+            // Africa
+            { name: "Cape Town Science Centre", city: "Cape Town, South Africa", lat: -33.9286, lon: 18.4562, url: "https://www.ctsc.org.za/" },
+            { name: "Science Centre Kenya", city: "Nairobi, Kenya", lat: -1.2921, lon: 36.8219, url: "https://sciencecentrekenya.org/" },
+            { name: "Talent Center at the German University in Cairo", city: "Cairo, Egypt", lat: 29.9866, lon: 31.4404, url: "https://www.guc.edu.eg/" }
+        ];
+
+        centers.forEach(center => {
+            L.marker([center.lat, center.lon])
+                .addTo(map)
+                .bindPopup(`
+                    <b>${center.name}</b><br>
+                    ${center.city}<br>
+                    <a href="${center.url}" target="_blank" rel="noopener noreferrer">Visit website</a>
+                `);
+        });
+    </script>
+</body>
+</html>
