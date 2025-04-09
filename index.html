@@ -28,42 +28,42 @@
 
         const centers = [
             // Europe
-            { name: "Copernicus Science Centre", city: "Warsaw, Poland", lat: 52.2395, lon: 21.0309, url: "https://www.kopernik.org.pl/en" },
-            { name: "Experiminta", city: "Frankfurt, Germany", lat: 50.1136, lon: 8.6474, url: "https://www.experiminta.de/" },
-            { name: "Experimenta Heilbronn", city: "Heilbronn, Germany", lat: 49.1416, lon: 9.2195, url: "https://www.experimenta.science/" },
-            { name: "Science Museum", city: "London, UK", lat: 51.4978, lon: -0.1745, url: "https://www.sciencemuseum.org.uk/" },
-            { name: "Cité des Sciences et de l'Industrie", city: "Paris, France", lat: 48.8966, lon: 2.3876, url: "https://www.cite-sciences.fr/en/home/" },
-            { name: "Tom Tits Experiment", city: "Stockholm, Sweden", lat: 59.1999, lon: 17.6274, url: "https://www.tomtit.se/english/" },
-            { name: "NEMO Science Museum", city: "Amsterdam, Netherlands", lat: 52.3741, lon: 4.9120, url: "https://www.nemosciencemuseum.nl/en/" },
-            { name: "Museo Nazionale Scienza e Tecnologia", city: "Milan, Italy", lat: 45.4613, lon: 9.1706, url: "https://www.museoscienza.org/en" },
-            { name: "Leonardo da Vinci Exhibition", city: "Rome, Italy", lat: 41.9009, lon: 12.4818, url: "https://www.mostradileonardo.com/" },
-            { name: "CosmoCaixa", city: "Barcelona, Spain", lat: 41.4095, lon: 2.1342, url: "https://cosmocaixa.org/en/" },
+            { name: "Copernicus Science Centre", city: "Warsaw", country: "Poland", lat: 52.2395, lon: 21.0309, opened: 2010, url: "https://www.kopernik.org.pl/en" },
+            { name: "Experiminta", city: "Frankfurt", country: "Germany", lat: 50.1136, lon: 8.6474, opened: 2011, url: "https://www.experiminta.de/" },
+            { name: "Experimenta Heilbronn", city: "Heilbronn", country: "Germany", lat: 49.1416, lon: 9.2195, opened: 2009, url: "https://www.experimenta.science/" },
+            { name: "Science Museum", city: "London", country: "UK", lat: 51.4978, lon: -0.1745, opened: 1857, url: "https://www.sciencemuseum.org.uk/" },
+            { name: "Cité des Sciences et de l'Industrie", city: "Paris", country: "France", lat: 48.8966, lon: 2.3876, opened: 1986, url: "https://www.cite-sciences.fr/en/home/" },
+            { name: "Tom Tits Experiment", city: "Stockholm", country: "Sweden", lat: 59.1999, lon: 17.6274, opened: 1987, url: "https://www.tomtit.se/english/" },
+            { name: "NEMO Science Museum", city: "Amsterdam", country: "Netherlands", lat: 52.3741, lon: 4.9120, opened: 1997, url: "https://www.nemosciencemuseum.nl/en/" },
+            { name: "Museo Nazionale Scienza e Tecnologia", city: "Milan", country: "Italy", lat: 45.4613, lon: 9.1706, opened: 1953, url: "https://www.museoscienza.org/en" },
+            { name: "Leonardo da Vinci Exhibition", city: "Rome", country: "Italy", lat: 41.9009, lon: 12.4818, opened: 2009, url: "https://www.mostradileonardo.com/" },
+            { name: "CosmoCaixa", city: "Barcelona", country: "Spain", lat: 41.4095, lon: 2.1342, opened: 2004, url: "https://cosmocaixa.org/en/" },
 
             // North America
-            { name: "Exploratorium", city: "San Francisco, USA", lat: 37.8014, lon: -122.3984, url: "https://www.exploratorium.edu/" },
-            { name: "Museum of Science", city: "Boston, USA", lat: 42.3677, lon: -71.0708, url: "https://www.mos.org/" },
-            { name: "Museum of Science and Industry", city: "Chicago, USA", lat: 41.7906, lon: -87.5831, url: "https://www.msichicago.org/" },
-            { name: "Ontario Science Centre", city: "Toronto, Canada", lat: 43.7160, lon: -79.3407, url: "https://www.ontariosciencecentre.ca/" },
-            { name: "Science World", city: "Vancouver, Canada", lat: 49.2734, lon: -123.1035, url: "https://www.scienceworld.ca/" },
+            { name: "Exploratorium", city: "San Francisco", country: "USA", lat: 37.8014, lon: -122.3984, opened: 1969, url: "https://www.exploratorium.edu/" },
+            { name: "Museum of Science", city: "Boston", country: "USA", lat: 42.3677, lon: -71.0708, opened: 1830, url: "https://www.mos.org/" },
+            { name: "Museum of Science and Industry", city: "Chicago", country: "USA", lat: 41.7906, lon: -87.5831, opened: 1933, url: "https://www.msichicago.org/" },
+            { name: "Ontario Science Centre", city: "Toronto", country: "Canada", lat: 43.7160, lon: -79.3407, opened: 1969, url: "https://www.ontariosciencecentre.ca/" },
+            { name: "Science World", city: "Vancouver", country: "Canada", lat: 49.2734, lon: -123.1035, opened: 1989, url: "https://www.scienceworld.ca/" },
 
             // Asia
-            { name: "Miraikan", city: "Tokyo, Japan", lat: 35.6199, lon: 139.7753, url: "https://www.miraikan.jst.go.jp/en/" },
-            { name: "Shanghai Science and Technology Museum", city: "Shanghai, China", lat: 31.2213, lon: 121.5440, url: "http://en.sstm.org.cn/" },
-            { name: "Science Centre Singapore", city: "Singapore", lat: 1.3321, lon: 103.7352, url: "https://www.science.edu.sg/" },
-            { name: "Gwacheon National Science Museum", city: "Seoul, South Korea", lat: 37.4332, lon: 126.9971, url: "https://www.sciencecenter.go.kr/" },
+            { name: "Miraikan", city: "Tokyo", country: "Japan", lat: 35.6199, lon: 139.7753, opened: 2001, url: "https://www.miraikan.jst.go.jp/en/" },
+            { name: "Shanghai Science and Technology Museum", city: "Shanghai", country: "China", lat: 31.2213, lon: 121.5440, opened: 2001, url: "http://en.sstm.org.cn/" },
+            { name: "Science Centre Singapore", city: "Singapore", country: "Singapore", lat: 1.3321, lon: 103.7352, opened: 1977, url: "https://www.science.edu.sg/" },
+            { name: "Gwacheon National Science Museum", city: "Seoul", country: "South Korea", lat: 37.4332, lon: 126.9971, opened: 2008, url: "https://www.sciencecenter.go.kr/" },
 
             // Oceania
-            { name: "Powerhouse Museum", city: "Sydney, Australia", lat: -33.8785, lon: 151.2021, url: "https://www.maas.museum/powerhouse-museum/" },
-            { name: "Scienceworks", city: "Melbourne, Australia", lat: -37.8290, lon: 144.8945, url: "https://museumsvictoria.com.au/scienceworks/" },
+            { name: "Powerhouse Museum", city: "Sydney", country: "Australia", lat: -33.8785, lon: 151.2021, opened: 1988, url: "https://www.maas.museum/powerhouse-museum/" },
+            { name: "Scienceworks", city: "Melbourne", country: "Australia", lat: -37.8290, lon: 144.8945, opened: 1992, url: "https://museumsvictoria.com.au/scienceworks/" },
 
             // South America
-            { name: "Catavento Cultural", city: "São Paulo, Brazil", lat: -23.5452, lon: -46.6285, url: "https://cataventocultural.org.br/" },
-            { name: "Museo Participativo de Ciencias", city: "Buenos Aires, Argentina", lat: -34.5831, lon: -58.4269, url: "https://www.mpc.org.ar/" },
+            { name: "Catavento Cultural", city: "São Paulo", country: "Brazil", lat: -23.5452, lon: -46.6285, opened: 2009, url: "https://cataventocultural.org.br/" },
+            { name: "Museo Participativo de Ciencias", city: "Buenos Aires", country: "Argentina", lat: -34.5831, lon: -58.4269, opened: 1988, url: "https://www.mpc.org.ar/" },
 
             // Africa
-            { name: "Cape Town Science Centre", city: "Cape Town, South Africa", lat: -33.9286, lon: 18.4562, url: "https://www.ctsc.org.za/" },
-            { name: "Science Centre Kenya", city: "Nairobi, Kenya", lat: -1.2921, lon: 36.8219, url: "https://sciencecentrekenya.org/" },
-            { name: "Talent Center at the German University in Cairo", city: "Cairo, Egypt", lat: 29.9866, lon: 31.4404, url: "https://www.guc.edu.eg/" }
+            { name: "Cape Town Science Centre", city: "Cape Town", country: "South Africa", lat: -33.9286, lon: 18.4562, opened: 2000, url: "https://www.ctsc.org.za/" },
+            { name: "Science Centre Kenya", city: "Nairobi", country: "Kenya", lat: -1.2921, lon: 36.8219, opened: 2014, url: "https://sciencecentrekenya.org/" },
+            { name: "Talent Center at the German University in Cairo", city: "Cairo", country: "Egypt", lat: 29.9866, lon: 31.4404, opened: 2025, url: "https://www.guc.edu.eg/" }
         ];
 
         centers.forEach(center => {
@@ -71,7 +71,8 @@
                 .addTo(map)
                 .bindPopup(`
                     <b>${center.name}</b><br>
-                    ${center.city}<br>
+                    ${center.city}, ${center.country}<br>
+                    Opened: ${center.opened}<br>
                     <a href="${center.url}" target="_blank" rel="noopener noreferrer">Visit website</a>
                 `);
         });
